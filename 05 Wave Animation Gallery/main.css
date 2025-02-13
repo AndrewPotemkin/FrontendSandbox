@@ -41,7 +41,7 @@ body {
     background-size: cover;
     background-position: center;
     cursor:pointer;
-    filter: grayscale() brightness(.5);
+    filter: grayscale(1) brightness(.5);
     transition: transform 1.25s var(--transition), filter 3s var(--transition), width 1.25s var(--transition);
     will-change: transform, filter;
 }
@@ -77,7 +77,7 @@ body {
     z-index: -4;
 }
 
-item::before, .item::after {
+.item::before, .item::after {
     content: '';
     position: absolute;
     height: 100%;
@@ -85,7 +85,7 @@ item::before, .item::after {
     right: calc(var(--index) * -1)
 }
 
-item::after {
+.item::after {
     left: calc(var(--index) * -1)
 }
 
@@ -116,6 +116,6 @@ item::after {
     width: 40vw;
     filter: inherit;
     z-index: 100;
-    transform: translateZ(calc(var(--index)) * 10);
-    margin: 0, .45vw;
+    transform: translateZ(calc(var(--index) * 10));
+    margin: 0.45vw;
 }
