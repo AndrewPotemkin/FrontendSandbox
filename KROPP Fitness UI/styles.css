@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     column-gap: 20px;
 
-    margin-inline: 20px;
+    padding-inline: 32px;
 }
 
 .header-logo {
@@ -123,6 +123,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-menu-list {
     display: flex;
+    flex-wrap: wrap;
     column-gap: 50px;
 }
 
@@ -182,4 +183,46 @@ h1, h2, h3, h4, h5, h6 {
 
     /*Манипуляции с отражением чёрточек*/
     box-shadow: 18px 0 0 currentColor;
+}
+
+/*Адаптивная вёрстка*/
+@media (max-width: 1024px) {
+    .header {
+        flex-wrap: wrap;
+        padding-top: 20px;
+        row-gap: 10px;
+        padding-inline: 15px;
+    }
+
+    .header-menu {
+        order: 1;
+        flex-basis: 100%;
+    }
+
+    .header-menu-link {
+        height: 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        padding-top: 10px;
+    }
+
+    .header-menu-list {
+        column-gap: 24px;
+    }
+
+    .header-menu-link {
+        height: 32px;
+    }
+
+    .header-actions {
+        column-gap: 15px;
+    }
+    
+    .button {
+        padding-inline: 18px;
+    }
+
 }
