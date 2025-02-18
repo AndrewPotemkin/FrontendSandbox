@@ -31,6 +31,7 @@ root - это то же самое, что и html, но у этого селе�
 */
 :root {
     --color-black: #000000;
+    --color-dark: #131619;
     --color-white: #ffffffff;
     --color-dark-gray: #404040;
     --color-light-gray: #c4c4c4;
@@ -76,6 +77,20 @@ a, button, input, textarea, svg * {
     padding-inline: var(--container-padding-x);
 }
 
+.visually-hidden {
+    /*box-suppress: hide;*/
+    position: absolute; !important;
+    clip: rect(0 0 0 0); !important;
+    width: 1px; !important;
+    aspect-ratio: 1; !important;
+    margin: -1px; !important;
+    padding: 0; !important;
+    border: 0; !important;
+    white-space: nowrap; !important;
+    clip-path: inset(100%); !important;
+    overflow: hidden; !important;
+}
+
 .button {
     display: inline-flex;
     align-items: center;
@@ -107,6 +122,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
+    background-color: var(--color-dark);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -145,7 +162,7 @@ h1, h2, h3, h4, h5, h6 {
     content: "";
     background-color: currentColor; /* Значение background-color наследуемое. Можно подтянуть его из родительского элемента */
     width: 5px;
-    height: 5px;
+    aspect-ratio: 1;
     border-radius: 5px;
 }
 
@@ -162,12 +179,12 @@ h1, h2, h3, h4, h5, h6 {
     row-gap: 4px;
 
     width: 40px;
-    height: 40px;
+    aspect-ratio: 1;
 
     background-color: transparent;
     color: var(--color-white);
     border: var(--border);
-    border-radius: var(--border-radius);
+    border-radius: 50%;
 }
 
 .header-burger-button:hover {
@@ -185,7 +202,20 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 18px 0 0 currentColor;
 }
 
-/*Адаптивная вёрстка*/
+/*Основная часть*/
+.banner {
+    background-color: var(--color-dark);
+
+    padding-inline: 70px;
+    padding-block: 36px;
+ }
+
+.banner-title {
+
+
+}
+
+/*Адаптивная вёрстка хэдера*/
 @media (max-width: 1024px) {
     .header {
         flex-wrap: wrap;
@@ -220,7 +250,7 @@ h1, h2, h3, h4, h5, h6 {
     .header-actions {
         column-gap: 15px;
     }
-    
+
     .button {
         padding-inline: 18px;
     }
